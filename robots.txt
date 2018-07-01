@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://kai.neuwerth.me/google_sitemap.xml

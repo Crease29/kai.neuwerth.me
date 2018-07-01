@@ -1,0 +1,228 @@
+@base-font-size: 16px;
+@screen-tablet-min: 768px;
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    font-size: @base-font-size;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    color: #FFF;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+@keyframes fading {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        color: #00FF08;
+        border-color: #00FF08;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #00FF08;
+    }
+}
+
+.text-shadow {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}
+
+.visible {
+    display: flex !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.js-copy-target {
+    position: absolute;
+    left: -30000px;
+    top: -30000px;
+}
+
+.background-video {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.layout--backdrop {
+    background: ~"-moz-linear-gradient(-45deg,  rgba(255,151,97,0.8) 0%, rgba(0,23,113,0.8) 100%)";
+    background: ~"-webkit-linear-gradient(-45deg,  rgba(255,151,97,0.8) 0%,rgba(0,23,113,0.8) 100%)";
+    background: ~"linear-gradient(135deg,  rgba(255,151,97,0.8) 0%,rgba(0,23,113,0.8) 100%)";
+    filter: ~"progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff9761', endColorstr='#cc001771',GradientType=1 )";
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+}
+
+.content {
+    flex: none;
+    width: 86%;
+    max-width: 666px;
+
+    .content--heading {
+        margin-bottom: 60px;
+
+        .content--heading-title {
+            &:extend(.text-shadow);
+            margin: 0;
+            font-size: 41px;
+            line-height: 51px;
+            font-weight: normal;
+        }
+
+        .content--heading-slug {
+            &:extend(.text-shadow);
+            background-color: rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            padding: 6px 6px 6px 11px;
+            margin: 0;
+            color: #00FF08;
+            font-size: 18px;
+            line-height: 23px;
+            font-family: 'Ubuntu Mono', monospace;
+            font-weight: 100;
+            transform: translate(4px, 0);
+            border-radius: 3px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+
+            .blinking-cursor {
+                animation: 1s blink step-end infinite;
+                line-height: 23px;
+            }
+        }
+
+        @media screen and (min-width: @screen-tablet-min) {
+            margin-bottom: 45px;
+
+            .content--heading-title {
+                display: inline-block;
+                font-size: 50px;
+            }
+
+            .content--heading-slug {
+                transform: translate(15px, -11px);
+            }
+        }
+    }
+
+    .link-list {
+        .link-list--item {
+            &:extend(.text-shadow);
+            line-height: 33px;
+            vertical-align: middle;
+        }
+
+        .link-list--link {
+        }
+
+        .link-list--button {
+            border: 1px solid #FFF;
+            border-radius: 5px;
+            padding: 3px 12px;
+            margin-left: 8px;
+            font-size: 11px;
+        }
+
+        @media screen and (min-width: @screen-tablet-min) {
+            width: 50%;
+            float: left;
+
+            .link-list--button {
+                opacity: 0.5;
+                transition: opacity 0.2s;
+                position: relative;
+
+                &:hover {
+                    opacity: 1;
+                    transition: opacity 0.3s;
+                }
+
+                &.copied {
+                    animation: fading 0.5s;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    .content--social-links {
+        margin-bottom: 60px;
+
+        @media screen and (min-width: @screen-tablet-min) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.bottom-links {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+#privacy-policy,
+#imprint {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+
+    .close {
+        display: block;
+        cursor: pointer;
+        font-size: 48px;
+        position: absolute;
+        top: 0;
+        right: 26px;
+    }
+
+    .scroll-content {
+        flex: none;
+        width: 86%;
+        max-height: 90vh;
+        overflow: auto;
+
+        p {
+            margin-bottom: 15px;
+        }
+    }
+}
