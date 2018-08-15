@@ -22,14 +22,17 @@ Array.prototype.forEach.call(document.getElementsByClassName('link-list--button'
 });
 
 function registerModalToggles(openSelector, modalContentId) {
-    document.querySelector(openSelector).onclick = function (e) {
+    var openTrigger = document.querySelector(openSelector);
+    openTrigger.onclick = function (e) {
         e.preventDefault();
+        this.parentNode.classList.add('hidden');
         document.getElementById('main-content').classList.add('hidden');
         document.getElementById(modalContentId).classList.add('visible');
     };
 
     document.querySelector('#' + modalContentId + ' .close').onclick = function (e) {
         e.preventDefault();
+        openTrigger.parentNode.classList.remove('hidden');
         document.getElementById('main-content').classList.remove('hidden');
         document.getElementById(modalContentId).classList.remove('visible');
     };
