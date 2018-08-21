@@ -3,7 +3,7 @@ node_js:
     - "lts/*"
 
 addons:
-    ssh_known_hosts: $deploy_host
+    ssh_known_hosts: home488606318.1and1-data.host
 
 before_deploy:
 - openssl aes-256-cbc -K $encrypted_8045d6202132_key -iv $encrypted_8045d6202132_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
