@@ -1,3 +1,7 @@
+language: node_js
+node_js:
+    - "lts/*"
+
 addons:
     ssh_known_hosts: kai.neuwerth.me
 
@@ -8,6 +12,11 @@ before_deploy:
 - ssh-add /tmp/deploy_rsa
 
 deploy:
+-   provider: script
+    skip_cleanup: true
+    script: npm install -g grunt-cli && cd $TRAVIS_BUILD_DIR/ && npm install && grunt
+    on:
+        branch: master
 -   provider: script
     skip_cleanup: true
     script: rsync -r --delete-after -n --exclude assets/webm $TRAVIS_BUILD_DIR/ $deploy_user@$deploy_host:$deploy_path
