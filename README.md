@@ -4,7 +4,7 @@
 
 </p>
 
-# :art: My personal website: kai.neuwerth.me
+# :art: My personal website: kai.neuwerth.me ![Travis build status](https://travis-ci.org/Crease29/kai.neuwerth.me.svg?branch=master)
 
 This repository holds my own static website. 
 You can see the production state [right here](https://kai.neuwerth.me/).
