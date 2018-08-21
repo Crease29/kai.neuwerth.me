@@ -14,11 +14,11 @@ before_deploy:
 deploy:
 -   provider: script
     skip_cleanup: true
-    script: cd $TRAVIS_BUILD_DIR/ && npm install -g grunt-cli && grunt
+    script: cd $TRAVIS_BUILD_DIR/ && npm install -g grunt-cli && grunt && rm -rf $TRAVIS_BUILD_DIR/build $TRAVIS_BUILD_DIR/node_modules $TRAVIS_BUILD_DIR/deploy_rsa.enc
     on:
         branch: master
 -   provider: script
     skip_cleanup: true
-    script: rsync -r --delete-after -n --exclude assets/webm $TRAVIS_BUILD_DIR/ $deploy_user@$deploy_host:$deploy_path
+    script: rsync -r --delete-after --quiet --exclude assets/webm $TRAVIS_BUILD_DIR/ $deploy_user@$deploy_host:$deploy_path
     on:
         branch: master
