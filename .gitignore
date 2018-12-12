@@ -3,6 +3,6 @@ assets/css/*
 !assets/css/.gitkeep
 assets/js/*
 !assets/js/.gitkeep
-assets/webm/*
-!assets/webm/.gitkeep
+assets/video/*
+!assets/video/.gitkeep
 node_modules
