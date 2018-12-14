@@ -19,7 +19,7 @@ and link it in the `index.html`.
 git clone git@github.com:Crease29/kai.neuwerth.me.git
 cd kai.neuwerth.me
 npm install
-grunt
+grunt build
 ```
 
 ## Feel free to use this codebase

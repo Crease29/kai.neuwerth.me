@@ -4,7 +4,7 @@ module.exports = {
     },
     target: {
         src: ['index.html', 'assets/js/*.js'],
-        css: ['assets/css/styles.min.css'],
+        css: ['assets/css/*.css'],
         dest: 'assets/css/styles.min.css'
     },
 };

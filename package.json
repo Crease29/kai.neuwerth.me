@@ -16,7 +16,7 @@
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-downloadfile": "^0.3.2",
+    "grunt-curl": "^2.5.0",
     "grunt-purifycss": "^0.1.2",
     "less-plugin-autoprefix": "^2.0.0",
     "load-grunt-config": "^1.0.1",
